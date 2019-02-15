@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "567437020300",
+    "firebase_url": "https://studentdatabasehandler.firebaseio.com",
+    "project_id": "studentdatabasehandler",
+    "storage_bucket": "studentdatabasehandler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567437020300:android:ea89907d65848d44",
+        "android_client_info": {
+          "package_name": "com.example.rushi.studentdatabasehandler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567437020300-fceagupdp9rufroslt8e8675hecekq53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rushi.studentdatabasehandler",
+            "certificate_hash": "72a093be42608cd525216a42ddfb022e88bbe7ef"
+          }
+        },
+        {
+          "client_id": "567437020300-v5mgstjhep6vv2a7jiv9j15jjmg8jtvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWhoWBaCRw-i9Ix_xmMHz8bqhpBpH9m80"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567437020300-v5mgstjhep6vv2a7jiv9j15jjmg8jtvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
