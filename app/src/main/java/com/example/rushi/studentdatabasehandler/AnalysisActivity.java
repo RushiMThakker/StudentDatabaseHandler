@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import com.example.rushi.studentdatabasehandler.databinding.ActivityAnalysisBinding;
 
+import static com.example.rushi.studentdatabasehandler.App.getAnalyticsUtility;
+
 public class AnalysisActivity extends AppCompatActivity implements View.OnClickListener
 {
   ActivityAnalysisBinding activityAnalysisBinding;
@@ -27,12 +29,15 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
     {
       case R.id.btnRed:
         activityAnalysisBinding.rlMain.setBackgroundColor(Color.RED);
+        getAnalyticsUtility().logColorSelectedEvent("red");
         break;
       case R.id.btnGreen:
         activityAnalysisBinding.rlMain.setBackgroundColor(Color.GREEN);
+        getAnalyticsUtility().logColorSelectedEvent("green");
         break;
       case R.id.btnYellow:
         activityAnalysisBinding.rlMain.setBackgroundColor(Color.YELLOW);
+        getAnalyticsUtility().logColorSelectedEvent("yellow");
         break;
     }
   }

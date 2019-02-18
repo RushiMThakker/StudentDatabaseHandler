@@ -1,30 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
   <RelativeLayout
       xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
       android:id="@+id/rlMain"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:gravity="center_horizontal"
-      tools:context=".AnalysisActivity">
+      android:focusableInTouchMode="true"
+      tools:context=".AnalysisActivity"
+      >
 
-    <Button
-        android:id="@+id/btnRed"
+    <TextView
+        android:id="@+id/tvHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Red"/>
-    <Button
-        android:id="@+id/btnYellow"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="@string/add_student"
+        android:textSize="25sp"
+        />
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilStudentFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHeading"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/first_name"
+        android:textColorHint="@color/hint_color"
+        app:hintTextAppearance="@style/HintTheme"
+        >
+      <android.support.design.widget.TextInputEditText
+          android:id="@+id/tietStudentFirstName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilStudentLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/tilStudentFirstName"
+        android:layout_alignStart="@id/tilStudentFirstName"
+        android:layout_below="@id/tilStudentFirstName"
+        android:layout_marginTop="5dp"
+        android:hint="@string/last_name"
+        android:textColorHint="@color/hint_color"
+        app:hintTextAppearance="@style/HintTheme"
+        >
+      <android.support.design.widget.TextInputEditText
+          android:id="@+id/tietStudentLastName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvSelectGroupColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnRed"
-        android:text="Yellow"/>
-    <Button
-        android:id="@+id/btnGreen"
+        android:layout_alignStart="@id/tilStudentLastName"
+        android:layout_below="@id/tilStudentLastName"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_group_color"
+        />
+    <RadioGroup
+        android:id="@+id/rgGroupColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnYellow"
-        android:text="Green"/>
+        android:layout_alignStart="@id/tilStudentLastName"
+        android:layout_below="@id/tvSelectGroupColor"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        >
+      <RadioButton
+          android:id="@+id/btnRed"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/color_red"
+          />
+      <RadioButton
+          android:id="@+id/btnYellow"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/color_yellow"
+          />
+      <RadioButton
+          android:id="@+id/btnGreen"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/color_green"
+          />
+    </RadioGroup>
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rgGroupColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/submit"
+        />
   </RelativeLayout>
 </layout>
