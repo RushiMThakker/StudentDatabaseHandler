@@ -1,17 +1,23 @@
 package com.example.rushi.studentdatabasehandler;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
 import com.example.rushi.studentdatabasehandler.databinding.ActivityAnalysisBinding;
+import com.example.rushi.studentdatabasehandler.db.Student;
+import com.example.rushi.studentdatabasehandler.repository.StudentRepository;
 
 import static com.example.rushi.studentdatabasehandler.App.getAnalyticsUtility;
 
 public class AnalysisActivity extends AppCompatActivity implements View.OnClickListener
 {
   ActivityAnalysisBinding activityAnalysisBinding;
+  public static final String EXTRA_REPLY = "com.example.rushi.studentdatabasehandler.AnalysisActivity.REPLY";
+
   @Override
   protected void onCreate(Bundle savedInstanceState)
   {
@@ -21,6 +27,7 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
     activityAnalysisBinding.btnGreen.setOnClickListener(this);
     activityAnalysisBinding.btnRed.setOnClickListener(this);
     activityAnalysisBinding.btnYellow.setOnClickListener(this);
+    activityAnalysisBinding.btnSubmit.setOnClickListener(this);
   }
 
   @Override public void onClick(View view)
@@ -39,6 +46,21 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
         activityAnalysisBinding.rlMain.setBackgroundColor(Color.YELLOW);
         getAnalyticsUtility().logColorSelectedEvent("yellow");
         break;
+      case R.id.btnSubmit:
+        addStudent();
+
+        break;
     }
+  }
+
+  private void addStudent()
+  {
+    Intent replyIntent = new Intent();
+    Student student = new Student(activityAnalysisBinding.tietStudentFirstName.getText().toString(),
+        activityAnalysisBinding.tietStudentLastName.getText().toString(),
+        ((RadioButton)findViewById(activityAnalysisBinding.rgGroupColor.getCheckedRadioButtonId())).getText().toString());
+    replyIntent.putExtra(EXTRA_REPLY, student);
+    setResult(RESULT_OK, replyIntent);
+    finish();
   }
 }

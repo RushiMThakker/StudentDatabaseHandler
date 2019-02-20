@@ -7,11 +7,12 @@ import com.example.rushi.studentdatabasehandler.db.Student;
 import com.example.rushi.studentdatabasehandler.db.StudentDao;
 import com.example.rushi.studentdatabasehandler.db.StudentRoomDatabase;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudentRepository
 {
   private StudentDao studentDao;
-  private LiveData<ArrayList<Student>> students;
+  private LiveData<List<Student>> students;
 
   public StudentRepository(Application application)
   {
@@ -20,7 +21,7 @@ public class StudentRepository
     students = studentDao.getAllStudents();
   }
 
-  public LiveData<ArrayList<Student>> getStudents()
+  public LiveData<List<Student>> getStudents()
   {
     return students;
   }

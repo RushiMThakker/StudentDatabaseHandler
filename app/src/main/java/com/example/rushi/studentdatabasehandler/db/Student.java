@@ -3,18 +3,17 @@ package com.example.rushi.studentdatabasehandler.db;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import java.io.Serializable;
 
 @Entity(tableName = "student")
-public class Student
+public class Student implements Serializable
 {
   @PrimaryKey(autoGenerate = true)
-  @NonNull
   private Integer id;
   private String firstName, lastName, color;
 
-  public Student(@NonNull Integer id, String firstName, String lastName, String color)
+  public Student(String firstName, String lastName, String color)
   {
-    this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.color = color;

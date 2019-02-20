@@ -1,24 +1,27 @@
-package com.example.rushi.studentdatabasehandler.ViewModels;
+package com.example.rushi.studentdatabasehandler.viewmodels;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 import com.example.rushi.studentdatabasehandler.db.Student;
 import com.example.rushi.studentdatabasehandler.repository.StudentRepository;
 import java.util.ArrayList;
+import java.util.List;
 
-public class StudentViewModel extends ViewModel
+public class StudentViewModel extends AndroidViewModel
 {
   private StudentRepository studentRepository;
-  private LiveData<ArrayList<Student>> students;
+  private LiveData<List<Student>> students;
 
-  public StudentViewModel(
-      StudentRepository studentRepository)
+  public StudentViewModel(Application application)
   {
-    this.studentRepository = studentRepository;
+    super(application);
+    this.studentRepository = new StudentRepository(application);
     students = studentRepository.getStudents();
   }
 
-  public LiveData<ArrayList<Student>> getStudents()
+  public LiveData<List<Student>> getStudents()
   {
     return students;
   }
