@@ -21,4 +21,30 @@
     <item name="android:layout_marginBottom">6dp</item>
     <item name="android:paddingLeft">8dp</item>
   </style>
+
+  <!--                                  DIALOG STYLES                                            -->
+  <style name="AppCompatAlertDialogStyle" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize">
+    <item name="android:windowBackground">@android:color/transparent</item>
+  </style>
+
+  <style name="ExplodeAnimationAlertDialog" parent="AppCompatAlertDialogStyle">
+    <item name="android:windowAnimationStyle">@style/ExplodeInExplodeOutAnimation</item>
+  </style>
+
+  <style name="ExplodeFadeAnimationAlertDialog" parent="AppCompatAlertDialogStyle">
+  <item name="android:windowAnimationStyle">@style/ExplodeFadeInExplodeFadeOutAnimation</item>
+  </style>
+  <!--                                  DIALOG STYLES                                            -->
+
+  <!--                                  WINDOWS ANIMATION STYLES                                 -->
+  <style name="ExplodeInExplodeOutAnimation">
+    <item name="android:windowEnterAnimation">@anim/explode_in</item>
+    <item name="android:windowExitAnimation">@anim/explode_out</item>
+  </style>
+
+  <style name="ExplodeFadeInExplodeFadeOutAnimation">
+    <item name="android:windowEnterAnimation">@anim/explode_fade_in</item>
+    <item name="android:windowExitAnimation">@anim/explode_fade_out</item>
+  </style>
+  <!--                                  WINDOWS ANIMATION STYLES                                 -->
 </resources>

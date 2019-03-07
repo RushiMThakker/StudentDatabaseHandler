@@ -1,10 +1,11 @@
-package com.example.rushi.studentdatabasehandler;
+package com.example.rushi.studentdatabasehandler.ui;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import com.example.rushi.studentdatabasehandler.R;
 import com.example.rushi.studentdatabasehandler.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.example.rushi.studentdatabasehandler.analytics.AnalyticsUtility;
 import com.example.rushi.studentdatabasehandler.analytics.firebaseanalyticsutility.FAUtility;
+import com.example.rushi.studentdatabasehandler.utility.ImageSelectionUtility;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class App extends Application

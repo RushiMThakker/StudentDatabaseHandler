@@ -1,4 +1,4 @@
-package com.example.rushi.studentdatabasehandler;
+package com.example.rushi.studentdatabasehandler.ui;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -10,19 +10,18 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import com.example.rushi.studentdatabasehandler.R;
 import com.example.rushi.studentdatabasehandler.adapter.StudentListAdapter;
 import com.example.rushi.studentdatabasehandler.databinding.ActivityStudentListBinding;
 import com.example.rushi.studentdatabasehandler.db.Student;
-import com.example.rushi.studentdatabasehandler.repository.StudentRepository;
 import com.example.rushi.studentdatabasehandler.viewmodels.StudentViewModel;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.rushi.studentdatabasehandler.AnalysisActivity.EXTRA_REPLY;
+import static com.example.rushi.studentdatabasehandler.constants.IntentConstants.STUDENT;
 
 public class StudentListActivity extends AppCompatActivity
 {
+  StudentViewModel studentViewModel;
   @Override
   protected void onCreate(Bundle savedInstanceState)
   {
@@ -30,7 +29,7 @@ public class StudentListActivity extends AppCompatActivity
     ActivityStudentListBinding activityStudentListBinding =
         DataBindingUtil.setContentView(this, R.layout.activity_student_list);
 
-    StudentViewModel studentViewModel = ViewModelProviders.of(this).get(StudentViewModel.class);
+    studentViewModel = ViewModelProviders.of(this).get(StudentViewModel.class);
     RecyclerView recyclerView = findViewById(R.id.rcvStudentList);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
     final StudentListAdapter adapter = new StudentListAdapter(this);
@@ -57,7 +56,7 @@ public class StudentListActivity extends AppCompatActivity
     switch (resultCode)
     {
       case RESULT_OK:
-        addStudent((Student) data.getSerializableExtra(EXTRA_REPLY));
+        addStudent((Student) data.getSerializableExtra(STUDENT));
         break;
     }
 
@@ -65,7 +64,6 @@ public class StudentListActivity extends AppCompatActivity
 
   private void addStudent(Student student)
   {
-    StudentRepository studentRepository = new StudentRepository(getApplication());
-    studentRepository.insert(student);
+    studentViewModel.insert(student);
   }
 }

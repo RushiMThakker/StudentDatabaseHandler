@@ -22,26 +22,32 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-}
 
-dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation "com.android.support:appcompat-v7:$libs.supportVersion"
-  implementation "com.android.support:design:$libs.supportVersion"
-  implementation 'com.google.firebase:firebase-core:16.0.7'
-  implementation 'com.google.firebase:firebase-perf:16.2.3'
-  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-  testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'com.android.support.test:runner:1.0.2'
-  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+  dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$libs.supportVersion"
+    implementation "com.android.support:design:$libs.supportVersion"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-  // Room components
-  implementation "android.arch.persistence.room:runtime:$libs.roomVersion"
-  annotationProcessor "android.arch.persistence.room:compiler:$libs.roomVersion"
-  androidTestImplementation "android.arch.persistence.room:testing:$libs.roomVersion"
+    // Room components
+    implementation "android.arch.persistence.room:runtime:$libs.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$libs.roomVersion"
+    androidTestImplementation "android.arch.persistence.room:testing:$libs.roomVersion"
 
-  // Lifecycle components
-  implementation "android.arch.lifecycle:extensions:$libs.archLifecycleVersion"
-  annotationProcessor "android.arch.lifecycle:compiler:$libs.archLifecycleVersion"
+    // Lifecycle components
+    implementation "android.arch.lifecycle:extensions:$libs.archLifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$libs.archLifecycleVersion"
+
+    //Firebase core for analytics
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+
+    //Firebase perfs for performance monitoring
+    implementation 'com.google.firebase:firebase-perf:16.2.3'
+
+    //For cardview
+    implementation "com.android.support:cardview-v7:$libs.supportVersion"
+  }
 }
 apply plugin: 'com.google.gms.google-services'
