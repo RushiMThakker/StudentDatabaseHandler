@@ -15,6 +15,7 @@ import com.example.rushi.studentdatabasehandler.adapter.StudentListAdapter;
 import com.example.rushi.studentdatabasehandler.databinding.ActivityStudentListBinding;
 import com.example.rushi.studentdatabasehandler.db.Student;
 import com.example.rushi.studentdatabasehandler.viewmodels.StudentViewModel;
+import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 import static com.example.rushi.studentdatabasehandler.constants.IntentConstants.STUDENT;

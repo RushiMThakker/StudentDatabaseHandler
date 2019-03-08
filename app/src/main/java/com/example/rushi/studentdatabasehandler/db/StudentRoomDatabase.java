@@ -33,7 +33,7 @@ public abstract class StudentRoomDatabase extends RoomDatabase
         public void onOpen(@NonNull SupportSQLiteDatabase db)
         {
           super.onOpen(db);
-          new PopulateDbAsync(studentRoomDatabase).execute();
+          //new PopulateDbAsync(studentRoomDatabase).execute();
         }
       };
 
